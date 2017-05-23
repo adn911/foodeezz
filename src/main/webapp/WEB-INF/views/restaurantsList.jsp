@@ -23,7 +23,7 @@
 
                     <c:if test="${!empty user}">
 
-                        <c:if test="${user.role == 'ROLE_ADMIN'}">
+                        <c:if test="${user.userType == 'ROLE_ADMIN'}">
 
                             <a class="btn btn-default form-control" href="/Foodeezz/restaurants/add">Add New
                                 Restaurant

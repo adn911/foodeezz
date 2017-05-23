@@ -9,7 +9,7 @@ import javax.persistence.Embeddable;
 @Embeddable
 public class MenuItemRating {
 
-    @Column(nullable = true,columnDefinition = "double default 0")
+    @Column(nullable = true, columnDefinition = "double default 0")
     private double overall;
 
     public double getOverall() {

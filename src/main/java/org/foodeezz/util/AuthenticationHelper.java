@@ -1,6 +1,6 @@
 package org.foodeezz.util;
 
-import org.foodeezz.persistance.entity.Role;
+import org.foodeezz.persistance.entity.UserType;
 import org.foodeezz.persistance.entity.User;
 
 import javax.servlet.http.HttpSession;
@@ -23,11 +23,11 @@ public class AuthenticationHelper {
     }
 
     public static boolean isUserAuthenticatedButNotAdmin(HttpSession httpSession) {
-        return getAuthenticatedUser(httpSession) != null && getAuthenticatedUser(httpSession).getRole() != Role.ROLE_ADMIN ;
+        return getAuthenticatedUser(httpSession) != null && getAuthenticatedUser(httpSession).getUserType() != UserType.ROLE_ADMIN ;
     }
 
     public static boolean isUserAdmin(HttpSession httpSession) {
-        return getAuthenticatedUser(httpSession) != null && getAuthenticatedUser(httpSession).getRole() == Role.ROLE_ADMIN ;
+        return getAuthenticatedUser(httpSession) != null && getAuthenticatedUser(httpSession).getUserType() == UserType.ROLE_ADMIN ;
     }
 
 

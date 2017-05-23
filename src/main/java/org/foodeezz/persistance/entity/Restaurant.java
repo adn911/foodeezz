@@ -29,33 +29,36 @@ public class Restaurant extends Persistent{
     private byte[] photo;
 
 
+    @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "category")
-    private RestaurantCategory category = new RestaurantCategory();
+    private RestaurantCategory category;
 
 
+    @JsonIgnore
     @OneToMany(mappedBy = "restaurant",cascade = CascadeType.ALL,fetch = FetchType.LAZY)
     @OrderBy(value = "rating.overall DESC")
     private List<MenuItem> menuItems;
 
 
+    @JsonIgnore
     @OneToMany(mappedBy = "restaurant",cascade = CascadeType.ALL,fetch = FetchType.LAZY)
     private List<RestaurantReview> reviews;
 
 
+    @JsonIgnore
     @OneToMany(mappedBy = "restaurant",cascade = CascadeType.ALL,fetch = FetchType.LAZY)
     private List<Branch> branches;
 
 
     private RestaurantRating rating;
 
-    @PrePersist
-    void onPrePersist(){
+    public Restaurant() {
+        category = new RestaurantCategory();
+        menuItems = new ArrayList<MenuItem>();
+        reviews = new ArrayList<RestaurantReview>();
+        branches = new ArrayList<Branch>();
         rating = new RestaurantRating();
-        rating.setEnvironment(0);
-        rating.setFoodQuality(0);
-        rating.setService(0);
-        rating.setOverall(0);
     }
 
     public void updateRating(RestaurantRating restaurantRating){

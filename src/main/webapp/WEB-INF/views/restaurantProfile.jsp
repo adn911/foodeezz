@@ -18,13 +18,13 @@
 
                 <!-- Nav tabs -->
                 <ul class="nav nav-tabs" role="tablist">
-                    <li role="presentation" class="active"><a href="#about" aria-controls="home" role="tab"
+                    <li role="presentation" class="active"><a href="#about" aria-controls="home" userType="tab"
                                                               data-toggle="tab">About</a></li>
-                    <li role="presentation"><a href="#menuitems" aria-controls="profile" role="tab" data-toggle="tab">Menu
+                    <li role="presentation"><a href="#menuitems" aria-controls="profile" userType="tab" data-toggle="tab">Menu
                         Items</a></li>
-                    <li role="presentation"><a href="#reviews" aria-controls="messages" role="tab" data-toggle="tab">Reviews</a>
+                    <li role="presentation"><a href="#reviews" aria-controls="messages" userType="tab" data-toggle="tab">Reviews</a>
 
-                    <li role="presentation"><a href="#branches" aria-controls="messages" role="tab" data-toggle="tab">Branches</a>
+                    <li role="presentation"><a href="#branches" aria-controls="messages" userType="tab" data-toggle="tab">Branches</a>
                     </li>
                 </ul>
 
@@ -49,7 +49,7 @@
 
                                     <c:if test="${!empty user}">
 
-                                        <c:if test="${user.role == 'ROLE_ADMIN'}">
+                                        <c:if test="${user.userType == 'ROLE_ADMIN'}">
 
                                             <a class="btn btn-default form-control"
                                                href="/Foodeezz/menuItems/add/${restaurant.id}">
@@ -134,7 +134,7 @@
 
                                                     <c:if test="${!empty user}">
 
-                                                        <c:if test="${user.role == 'ROLE_ADMIN'}">
+                                                        <c:if test="${user.userType == 'ROLE_ADMIN'}">
 
                                                             <form action="/Foodeezz/restaurants/removeBranch"
                                                                   class="pull-right" method="post"
@@ -174,7 +174,7 @@
 
                                         <c:if test="${!empty user}">
 
-                                            <c:if test="${user.role == 'ROLE_ADMIN'}">
+                                            <c:if test="${user.userType == 'ROLE_ADMIN'}">
 
                                                 <Button class="btn btn-default form-control"
                                                         onclick="$('#addBranch').toggle()">

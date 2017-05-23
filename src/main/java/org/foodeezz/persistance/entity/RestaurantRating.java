@@ -11,18 +11,17 @@ import javax.persistence.Embeddable;
 @Embeddable
 public class RestaurantRating {
 
-    @Column(nullable = true,columnDefinition = "double default 0")
-    private double environment = 0;
+    @Column(nullable = true, columnDefinition = "double default 0")
+    private double environment;
 
-    @Column(nullable = true,columnDefinition = "double default 0")
-    private double foodQuality = 0;
+    @Column(nullable = true, columnDefinition = "double default 0")
+    private double foodQuality;
 
-    @Column(nullable = true,columnDefinition = "double default 0")
-    private double service = 0;
+    @Column(nullable = true, columnDefinition = "double default 0")
+    private double service;
 
-    @Column(nullable = true,columnDefinition = "double default 0")
-    private double overall = 0;
-
+    @Column(nullable = true, columnDefinition = "double default 0")
+    private double overall;
 
     public double getEnvironment() {
         return environment;

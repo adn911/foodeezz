@@ -40,7 +40,7 @@
 
                                 <c:if test="${!empty user}">
 
-                                    <c:if test="${user.role == 'ROLE_ADMIN'}">
+                                    <c:if test="${user.userType == 'ROLE_ADMIN'}">
 
                                         <form action="/Foodeezz/menuItems/remove" method="post" class="pull-right"
                                               onsubmit="return confirmAction();">

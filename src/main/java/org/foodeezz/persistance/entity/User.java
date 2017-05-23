@@ -12,40 +12,29 @@ import java.util.List;
  * Created by GALIB on 4/18/2015.
  */
 @Entity
-public class User extends Persistent{
+public class User extends Persistent {
 
     @NotEmpty
-    @Length(min = 5,max = 99)
-    @Column(nullable = false, length = 99,unique = true)
+    @Length(min = 5, max = 99)
+    @Column(nullable = false, length = 99, unique = true)
     private String username;
 
     @NotEmpty
     @Email
-    @Column(nullable = false, length = 99,unique = true)
+    @Column(nullable = false, length = 99, unique = true)
     private String email;
 
     @NotEmpty
-    @Length(min = 5,max = 99)
+    @Length(min = 5, max = 99)
     @Column(nullable = false, length = 99)
     private String password;
 
     @NotNull
-    @Enumerated(value = EnumType.ORDINAL)
-    private Role role;
+    @Enumerated(value = EnumType.STRING)
+    private UserType userType;
 
     @Column(nullable = true, length = 99)
     private String photo;
-
-    @OneToMany(mappedBy = "user",cascade = CascadeType.REMOVE)
-    private List<Review> reviews;
-
-    public List<Review> getReviews() {
-        return reviews;
-    }
-
-    public void setReviews(List<Review> reviews) {
-        this.reviews = reviews;
-    }
 
     public String getPhoto() {
         return photo;
@@ -79,11 +68,11 @@ public class User extends Persistent{
         this.password = password;
     }
 
-    public Role getRole() {
-        return role;
+    public UserType getUserType() {
+        return userType;
     }
 
-    public void setRole(Role role) {
-        this.role = role;
+    public void setUserType(UserType userType) {
+        this.userType = userType;
     }
 }

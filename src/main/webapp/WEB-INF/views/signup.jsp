@@ -50,7 +50,7 @@
                     <sf:form action="/Foodeezz/signup" method="POST" commandName="newUser"
                              enctype="multipart/form-data">
 
-                        <input id="role" name="role" class="form-control" type="hidden" value="ROLE_USER"/> <br>
+                        <input id="role" name="userType" class="form-control" type="hidden" value="ROLE_USER"/> <br>
 
                         <%--<label>Username</label><br>--%>
                         <sf:errors path="username" cssClass="error"/><br>
